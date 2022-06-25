@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <title>Jogo da Memória </title>
+</head>
+
+<body>
+    <audio id="musicTema" autoplay="autoplay">
+        <source src="./assets/audio/tema.mp3" type="audio/mp3" />
+        <source src="./assets/audio/running-up-that.mp3" type="audio/mp3" />
+        seu navegador não suporta HTML5
+    </audio>
+    <div class="transition">
+
+    </div>
+
+    <h1>Jogo da Memória - Stranger Things</h1>
+    <div class="container">
+        <div class="button-volume">
+            <button id="btn-pause">
+                <span class="material-symbols-outlined" id="volume-off" onclick="up()"
+                    style="display: none;">volume_off</span>
+                <span class="material-symbols-outlined" id="volume-up" onclick="mute()">volume_up</span>
+            </button>
+        </div>
+        <main class="game">
+
+            <div class="card" data-card="jim">
+                <img class="card-front" src="./assets/img/jim.jpg" alt="Carta - Frente">
+                <img class="card-back" src="./assets/img/box.png" alt="Carta - Tema">
+            </div>
+            <div class="card" data-card="jonathan">
+                <img class="card-front" src="./assets/img/jonathan.jpg" alt="Carta - Frente">
+                <img class="card-back" src="./assets/img/box.png" alt="Carta - Tema">
+            </div>
+            <div class="card" data-card="eleven">
+                <img class="card-front" src="./assets/img/eleven.jpg" alt="Carta - Frente">
+                <img class="card-back" src="./assets/img/box.png" alt="Carta - Tema">
+            </div>
+            <div class="card" data-card="dustin">
+                <img class="card-front" src="./assets/img/dustin.jpg" alt="Carta - Frente">
+                <img class="card-back" src="./assets/img/box.png" alt="Carta - Tema">
+            </div>
+            <div class="card" data-card="lucas">
+                <img class="card-front" src="./assets/img/lucas.jpg" alt="Carta - Frente">
+                <img class="card-back" src="./assets/img/box.png" alt="Carta - Tema">
+            </div>
+            <div class="card" data-card="eleven">
+                <img class="card-front" src="./assets/img/eleven.jpg" alt="Carta - Frente">
+                <img class="card-back" src="./assets/img/box.png" alt="Carta - Tema">
+            </div>
+            <div class="card" data-card="max">
+                <img class="card-front" src="./assets/img/max.jpg" alt="Carta - Frente">
+                <img class="card-back" src="./assets/img/box.png" alt="Carta - Tema">
+            </div>
+            <div class="card" data-card="jonathan">
+                <img class="card-front" src="./assets/img/jonathan.jpg" alt="Carta - Frente">
+                <img class="card-back" src="./assets/img/box.png" alt="Carta - Tema">
+            </div>
+            <div class="card" data-card="will">
+                <img class="card-front" src="./assets/img/will.jpg" alt="Carta - Frente">
+                <img class="card-back" src="./assets/img/box.png" alt="Carta - Tema">
+            </div>
+            <div class="card" data-card="steve">
+                <img class="card-front" src="./assets/img/steve.jpg" alt="Carta - Frente">
+                <img class="card-back" src="./assets/img/box.png" alt="Carta - Tema">
+            </div>
+            <div class="card" data-card="joyce">
+                <img class="card-front" src="./assets/img/joyce.jpg" alt="Carta - Frente">
+                <img class="card-back" src="./assets/img/box.png" alt="Carta - Tema">
+            </div>
+            <div class="card" data-card="dustin">
+                <img class="card-front" src="./assets/img/dustin.jpg" alt="Carta - Frente">
+                <img class="card-back" src="./assets/img/box.png" alt="Carta - Tema">
+            </div>
+            <div class="card" data-card="joyce">
+                <img class="card-front" src="./assets/img/joyce.jpg" alt="Carta - Frente">
+                <img class="card-back" src="./assets/img/box.png" alt="Carta - Tema">
+            </div>
+            <div class="card" data-card="will">
+                <img class="card-front" src="./assets/img/will.jpg" alt="Carta - Frente">
+                <img class="card-back" src="./assets/img/box.png" alt="Carta - Tema">
+            </div>
+            <div class="card" data-card="steve">
+                <img class="card-front" src="./assets/img/steve.jpg" alt="Carta - Frente">
+                <img class="card-back" src="./assets/img/box.png" alt="Carta - Tema">
+            </div>
+            <div class="card" data-card="max">
+                <img class="card-front" src="./assets/img/max.jpg" alt="Carta - Frente">
+                <img class="card-back" src="./assets/img/box.png" alt="Carta - Tema">
+            </div>
+            <div class="card" data-card="lucas">
+                <img class="card-front" src="./assets/img/lucas.jpg" alt="Carta - Frente">
+                <img class="card-back" src="./assets/img/box.png" alt="Carta - Tema">
+            </div>
+            <div class="card" data-card="jim">
+                <img class="card-front" src="./assets/img/jim.jpg" alt="Carta - Frente">
+                <img class="card-back" src="./assets/img/box.png" alt="Carta - Tema">
+            </div>
+
+        </main>
+    </div>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
