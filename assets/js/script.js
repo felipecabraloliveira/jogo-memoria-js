@@ -3,6 +3,7 @@ var music = document.getElementById("musicTema");
 const BTN_MUTE = document.getElementById("volume-off");
 const BTN_UP = document.getElementById("volume-up");
 
+
 function mute() {
     music.volume = 0.0;
     BTN_MUTE.style.display = 'block';
