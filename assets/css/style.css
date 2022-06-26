@@ -10,7 +10,7 @@
 }
 
 body {
-    background: url("/assets/img/capa.jpg");
+    background: url("capa.jpg");
     background-position: bottom;
     background-size: cover;
     background-repeat: no-repeat;
@@ -27,7 +27,7 @@ body {
     align-items: center;
     flex-direction: column;
     justify-content: end;
-    background: url('/assets/img/logo.png');
+    background: url('logo.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto;
