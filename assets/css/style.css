@@ -407,4 +407,11 @@ h1 {
     .score {
         padding-top: 130px;
     }
+
+    #toggle:checked~.score {
+        width: 80%;
+        visibility: visible;
+        position: absolute;
+        opacity: 1;
+    }
 }
