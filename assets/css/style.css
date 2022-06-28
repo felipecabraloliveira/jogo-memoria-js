@@ -117,48 +117,7 @@ body {
     cursor: pointer;
 }
 
-/*
-.checkbox .trace {
-    width: 50px;
-    height: 2px;
-    background-color: white;
-    position: absolute;
-    border-radius: 4px;
-    transition: 0.5s ease-in-out 0s;
-}
 
-.checkbox .trace:nth-child(1) {
-    top: 20px;
-    transform: rotate(0);
-}
-
-.checkbox .trace:nth-child(2) {
-    top: 40px;
-    transform: rotate(0);
-}
-
-.checkbox .trace:nth-child(3) {
-    top: 60px;
-    transform: rotate(0);
-}
-
-#toggle:checked+.checkbox .trace:nth-child(1) {
-    transform: rotate(45deg);
-    top: 47px;
-}
-
-#toggle:checked+.checkbox .trace:nth-child(2) {
-    transform: translate(-10px);
-    width: 30px;
-    visibility: hidden;
-    opacity: 0;
-}
-
-#toggle:checked+.checkbox .trace:nth-child(3) {
-    transform: rotate(-45deg);
-    top: 48px;
-}
-*/
 #toggle:checked~.score {
     width: 300px;
     visibility: visible;
@@ -169,6 +128,7 @@ body {
 .cont {
     width: 40px;
     height: 40px;
+    z-index: 998;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -229,7 +189,6 @@ h1 {
     flex-wrap: wrap;
     perspective: 1000px;
     animation: transitionGame 9s ease-in-out forwards;
-    /*border: solid red 2px;*/
     /* perspectiva do usuario no eixo z, quanto maior, maior o efeito da perspectiva */
 }
 
@@ -249,6 +208,7 @@ h1 {
     background-size: cover;
     z-index: 990;
     transition: 0.5s ease-in-out 0s;
+    border-radius: 20px;
 }
 
 .winner h1 {
@@ -268,8 +228,10 @@ h1 {
     align-items: center;
     text-align: center;
     color: #FF161F;
-    background-color: rgba(255, 255, 255, 0.9);
-    font-size: 22px;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-size: 26px;
+    font-weight: 900;
+    text-transform: uppercase;
 }
 
 .winner-input input {
@@ -282,7 +244,7 @@ h1 {
 
 .winner-input button {
     cursor: pointer;
-    padding: 10px 20px;
+    padding: 10px 18px;
     background-color: #FF161F;
     color: white;
     font-size: 22px;
@@ -294,6 +256,7 @@ h1 {
 
 .winner-input button:hover {
     background-color: black;
+    transform: scale(1.1);
 }
 
 .card {
@@ -397,6 +360,10 @@ h1 {
         background-repeat: repeat-y;
     }
 
+    .transition {
+        background-size: 80%;
+    }
+
     h1 {
         font-size: 20px;
     }
@@ -409,6 +376,7 @@ h1 {
         justify-content: center;
         width: 100%;
         height: 500px;
+        margin-top: 80px;
         margin-left: 5px;
     }
 
@@ -416,5 +384,27 @@ h1 {
         width: 100px;
         height: 100px;
         margin: 5px;
+    }
+
+    .cont {
+        width: 25px;
+        height: 25px;
+        padding: 25px;
+        font-size: 16px;
+        top: 60px;
+        left: 5px;
+        position: absolute;
+        flex-direction: row;
+    }
+
+    .checkbox {
+        position: absolute;
+        top: 60px;
+        right: 5px;
+
+    }
+
+    .score {
+        padding-top: 130px;
     }
 }

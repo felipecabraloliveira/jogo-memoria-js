@@ -2,18 +2,16 @@
 let music = document.getElementById("musicTema");
 const BTN_MUTE = document.getElementById("volume-off");
 const BTN_UP = document.getElementById("volume-up");
-
 const BTN_SAVE = document.getElementById("save");
-
-
-
+/* Add efeito sonoro de virada de carta */
+const soundCard = new Audio('/assets/audio/card.wav');
 
 // Tocar a música ao interagir com o corpo do site.
 document.body.addEventListener("mousemove", function () {
     music.play();
 });
 
-// Função para mutar a música.
+// Função para mutar a música tema.
 function mute() {
     music.muted = true;
     BTN_MUTE.style.display = 'block';
@@ -26,27 +24,25 @@ function up() {
     BTN_UP.style.display = 'block';
 }
 
-
+// Cookies - Pegar valores. 
 let score = Cookies.get('score');
 let player = Cookies.get('player');
 
 if (score == undefined) {
     score = 9999;
 } else {
+    // Add ao menu de Melhor pontuação valor do recorde.
     document.getElementById('score').innerHTML = '<div class="score-players"><h3>' + Cookies.get('player') + '</h3><h3>' + Cookies.get('score') + '</h3></div>';
 }
-
-
-
-
 
 const cards = document.querySelectorAll('.card');
 let hasFlippedCard = false;
 let firstCard, secondCard;
 let lockBoard = false;
 
-//função para virar carta
+//função para virar carta, acionando o efeito sonoro de virada de carta.
 function flipCard() {
+    soundCard.play();
     if (lockBoard) return;
     if (this === firstCard) return;
 
@@ -69,18 +65,16 @@ function checkForMatch() {
         disableCards();
         win++;
         cont++;
-        document.getElementById("teste").innerHTML = cont;
-        if (win == 9) {
+        document.getElementById("contTo").innerHTML = cont;
+        if (win === 9) {
             document.getElementById("winner").style.animation = "transitionGame 2s ease-in-out forwards";
             document.getElementById("winner").style.display = "flex";
             document.getElementById("winner").style.visibility = "visible";
         }
-
         return;
     }
     cont++;
-    document.getElementById("teste").innerHTML = cont;
-
+    document.getElementById("contTo").innerHTML = cont;
     unflipCards();
 }
 
