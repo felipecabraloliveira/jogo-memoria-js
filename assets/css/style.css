@@ -198,7 +198,6 @@ h1 {
     width: 90%;
     visibility: hidden;
     margin: 10px auto;
-    display: none;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -371,6 +370,20 @@ h1 {
 
     .button-volume {
         display: none;
+    }
+
+    .winner {
+        position: absolute;
+        min-height: 500px;
+        width: 90%;
+        visibility: hidden;
+        margin: 10px auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .winner-input {
+        flex-direction: column;
     }
 
     .game {

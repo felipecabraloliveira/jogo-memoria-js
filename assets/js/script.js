@@ -32,7 +32,7 @@ if (score == undefined) {
     score = 9999;
 } else {
     // Add ao menu de Melhor pontuação valor do recorde.
-    document.getElementById('score').innerHTML = '<div class="score-players"><h3>' + Cookies.get('player') + '</h3><h3>' + Cookies.get('score') + '</h3></div>';
+    document.getElementById('score').innerHTML = '<div class="score-players"><h3>' + Cookies.get('player') + '</h3><h3>' + Cookies.get('score') + ' Tentativas</h3></div>';
 }
 
 const cards = document.querySelectorAll('.card');
@@ -122,7 +122,8 @@ BTN_SAVE.addEventListener("click", function () {
         Cookies.set('player', document.getElementById("nickname").value, { expires: 365 });
         Cookies.set('score', cont, { expires: 365 });
         alert("Novo Recorde!!!");
-        document.getElementById('score').innerHTML = '<div class="score-players"><h3>' + Cookies.get('player') + '</h3><h3>' + Cookies.get('score') + '</h3></div>';
+        document.getElementById('score').innerHTML = '<div class="score-players"><h3>' + Cookies.get('player') + '</h3><h3>' + Cookies.get('score') + ' Tentativas</h3></div>';
+        document.getElementById('winner').style.display = 'none';
     } else {
         alert("Sua pontuação ainda não atingiu a melhor, continue tentando!");
     }
