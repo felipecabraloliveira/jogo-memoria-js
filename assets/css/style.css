@@ -301,6 +301,7 @@ h1 {
 
 .card.flip {
     transform: rotateY(180deg);
+    transition: 0.4s;
 }
 
 
