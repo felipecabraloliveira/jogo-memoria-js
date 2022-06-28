@@ -1,15 +1,16 @@
+/* Música Tema */
+let music = document.getElementById("musicTheme");
 
-let music = document.getElementById("musicTema");
-const BTN_MUTE = document.getElementById("volume-off");
-const BTN_UP = document.getElementById("volume-up");
-const BTN_SAVE = document.getElementById("save");
-/* Add efeito sonoro de virada de carta */
+/* Efeito sonoro de virada da carta */
 const soundCard = new Audio('/assets/audio/card.wav');
 
 // Tocar a música ao interagir com o corpo do site.
 document.body.addEventListener("mousemove", function () {
     music.play();
 });
+
+const BTN_MUTE = document.getElementById("volume-off");
+const BTN_UP = document.getElementById("volume-up");
 
 // Função para mutar a música tema.
 function mute() {
@@ -24,10 +25,11 @@ function up() {
     BTN_UP.style.display = 'block';
 }
 
-// Cookies - Pegar valores. 
+// Cookies - Get dos valores. 
 let score = Cookies.get('score');
 let player = Cookies.get('player');
 
+// Comparar se existe um recorde armazenado no cookie.
 if (score == undefined) {
     score = 9999;
 } else {
@@ -35,13 +37,15 @@ if (score == undefined) {
     document.getElementById('score').innerHTML = '<div class="score-players"><h3>' + Cookies.get('player') + '</h3><h3>' + Cookies.get('score') + ' Tentativas</h3></div>';
 }
 
+// Trabalhando os Cards do Jogo
 const cards = document.querySelectorAll('.card');
 let hasFlippedCard = false;
 let firstCard, secondCard;
 let lockBoard = false;
 
-//função para virar carta, acionando o efeito sonoro de virada de carta.
+//função para virar a carta, acionando o efeito sonoro da virada de carta.
 function flipCard() {
+    // Efeito sonoro da virada de carta.
     soundCard.play();
     if (lockBoard) return;
     if (this === firstCard) return;
@@ -52,20 +56,21 @@ function flipCard() {
         firstCard = this;
         return;
     }
-
     secondCard = this;
     hasFlippedCard = false;
-    checkForMatch();
+    checkMatch();
 }
 
+// Variáveis para armazenar tentativas e acertos.
 let cont = 0, win = 0;
-//função que checa se as cartas são iguais
-function checkForMatch() {
+//função que checa se os valores do dataset das cartas são iguais.
+function checkMatch() {
     if (firstCard.dataset.card === secondCard.dataset.card) {
         disableCards();
         win++;
         cont++;
         document.getElementById("contTo").innerHTML = cont;
+        // Comparando o número de acertos com o total necessário para vencer o jogo!
         if (win === 9) {
             document.getElementById("winner").style.animation = "transitionGame 2s ease-in-out forwards";
             document.getElementById("winner").style.display = "flex";
@@ -78,11 +83,10 @@ function checkForMatch() {
     unflipCards();
 }
 
-//função que desabilita as cartas
+//função para desabilitar as cartas
 function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
-
     resetBoard();
 }
 
@@ -91,41 +95,44 @@ function unflipCards() {
     lockBoard = true;
 
     setTimeout(() => {
+        // Remove as classes flip ativas
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
-
         resetBoard();
     }, 1500);
 }
 
-//função que reseta o tabuleiro
+//função que reseta o jogo
 function resetBoard() {
-    [hasFlippedCard, lockBoard] = [false, false];
-    [firstCard, secondCard] = [null, null];
+    hasFlippedCard = false;
+    lockBoard = false;
+    firstCard = null;
+    secondCard = null;
 }
 
-//função que embaralha as cartas
-(function shuffle() {
+//função para embaralhar as cartas 
+(function shuffleCards() {
     cards.forEach((card) => {
-        let ramdomPosition = Math.floor(Math.random() * 18);
-        card.style.order = ramdomPosition;
+        let ramdom = Math.floor(Math.random() * 18);
+        card.style.order = ramdom;
     })
 })();
 
-//adiciona evento de clique na carta
+// Adiciona evento de clique na carta
 cards.forEach((card) => {
     card.addEventListener('click', flipCard)
 });
 
+const BTN_SAVE = document.getElementById("save");
+// Salvar no cookie o menor resultado para completar o jogo.
 BTN_SAVE.addEventListener("click", function () {
     if (cont <= parseInt(score)) {
         Cookies.set('player', document.getElementById("nickname").value, { expires: 365 });
         Cookies.set('score', cont, { expires: 365 });
         alert("Novo Recorde!!!");
         document.getElementById('score').innerHTML = '<div class="score-players"><h3>' + Cookies.get('player') + '</h3><h3>' + Cookies.get('score') + ' Tentativas</h3></div>';
-        document.getElementById('winner').style.display = 'none';
     } else {
-        alert("Sua pontuação ainda não atingiu a melhor, continue tentando!");
+        alert("Sua pontuação não foi a melhor, continue tentando!");
     }
-
-})
+    document.getElementById('winner').style.display = 'none';
+});

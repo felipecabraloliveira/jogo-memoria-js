@@ -11,39 +11,42 @@
 </head>
 
 <body>
-    <audio loop id="musicTema" autoplay autoplay="true">
-        <source src="./assets/audio/tema.mp3" type="audio/mpeg">
-        Seu navegador não suporta a música tema.
-    </audio>
-    <div class="transition"></div>
+    <header>
+        <audio loop id="musicTheme" autoplay autoplay="true">
+            <source src="./assets/audio/tema.mp3" type="audio/mpeg">
+            Seu navegador não suporta a música tema.
+        </audio>
+        <div class="transition"></div>
 
-    <input type="checkbox" id="toggle">
-    <label class="checkbox" for="toggle">
-        <span class="material-symbols-outlined">
-            sports_score
-        </span>
-    </label>
-    <div class="score">
-        <h2>Melhor Pontuação</h2>
-        <div class="score-panel">
-            <h3>Jogador</h3>
-            <h3>Pontuação</h3>
+        <input type="checkbox" id="toggle">
+        <label class="checkbox" for="toggle">
+            <span class="material-symbols-outlined">
+                sports_score
+            </span>
+        </label>
+        <div class="score">
+            <h2>Melhor Pontuação</h2>
+            <div class="score-panel">
+                <h3>Jogador</h3>
+                <h3>Pontuação</h3>
+            </div>
+            <div id="score"></div>
         </div>
-        <div id="score"></div>
-    </div>
-    <h1>Jogo da Memória - Stranger Things</h1>
-    <div class="container">
-        <div class="cont" id="contTo">
-            0
+
+        <h1>Jogo da Memória - Stranger Things</h1>
+        <div class="container">
+            <div class="cont" id="contTo">
+                0
+            </div>
+            <div class="button-volume">
+                <button id="btn-pause">
+                    <span class="material-symbols-outlined" id="volume-off" onclick="up()"
+                        style="display: none;">volume_off</span>
+                    <span class="material-symbols-outlined" id="volume-up" onclick="mute()">volume_up</span>
+                </button>
+            </div>
         </div>
-        <div class="button-volume">
-            <button id="btn-pause">
-                <span class="material-symbols-outlined" id="volume-off" onclick="up()"
-                    style="display: none;">volume_off</span>
-                <span class="material-symbols-outlined" id="volume-up" onclick="mute()">volume_up</span>
-            </button>
-        </div>
-    </div>
+    </header>
     <main class="game">
         <div class="winner" id="winner">
             <h1>Parabéns você venceu!<br>
@@ -127,7 +130,6 @@
             <img class="card-front" src="./assets/img/jim.jpg" alt="Carta - Frente">
             <img class="card-back" src="./assets/img/box.png" alt="Carta - Tema">
         </div>
-
     </main>
     </div>
 
