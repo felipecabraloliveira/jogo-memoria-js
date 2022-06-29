@@ -25,6 +25,16 @@ function up() {
     BTN_UP.style.display = 'block';
 }
 
+// Mutar música ao sair da aba ou minimizar o navegador
+document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState == 'hidden')
+            music.muted = true;
+        else if (BTN_UP.style.display != "none") // Validar se o jogador optou por mutar o som da música.
+            music.muted = false;
+    });
+});
+
 // Cookies - Get dos valores. 
 let score = Cookies.get('score');
 let player = Cookies.get('player');
