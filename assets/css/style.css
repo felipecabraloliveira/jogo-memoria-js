@@ -87,8 +87,6 @@ body {
     text-transform: uppercase;
 }
 
-
-
 #toggle {
     display: none;
 }
@@ -144,25 +142,6 @@ body {
     font-size: 40px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .container {
     width: 100%;
     display: flex;
@@ -177,7 +156,6 @@ h1 {
     color: white;
     font-weight: 900;
     font-style: bold;
-
 }
 
 .game {
@@ -189,7 +167,6 @@ h1 {
     flex-wrap: wrap;
     perspective: 1000px;
     animation: transitionGame 9s ease-in-out forwards;
-    /* perspectiva do usuario no eixo z, quanto maior, maior o efeito da perspectiva */
 }
 
 .winner {
@@ -238,7 +215,6 @@ h1 {
     font-size: 22px;
     padding-left: 5px;
     text-transform: uppercase;
-
 }
 
 .winner-input button {
@@ -284,7 +260,7 @@ h1 {
     border-radius: 5px;
     background: rgba(235, 204, 204, 0.685);
     backface-visibility: hidden;
-    /* Retira o verso do Elemento */
+    /* Retira o verso da carta */
 }
 
 .card-front {
@@ -296,7 +272,6 @@ h1 {
     transform: rotateY(180deg);
     transition: 0.4s;
 }
-
 
 @keyframes transitionMain {
     0% {
@@ -329,7 +304,6 @@ h1 {
     }
 }
 
-
 @media (max-width: 900px) {
     .button-volume {
         top: 0px;
@@ -346,7 +320,6 @@ h1 {
     }
 }
 
-
 @media (max-width: 600px) {
     body {
         background-repeat: repeat-y;
@@ -357,7 +330,7 @@ h1 {
     }
 
     h1 {
-        font-size: 20px;
+        font-size: 25px;
     }
 
     .button-volume {
@@ -407,7 +380,6 @@ h1 {
         position: absolute;
         top: 60px;
         right: 5px;
-
     }
 
     .score {

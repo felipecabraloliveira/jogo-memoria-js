@@ -112,9 +112,17 @@ function resetBoard() {
 
 //função para embaralhar as cartas 
 (function shuffleCards() {
+    let i = 0;
+    let array = [];
+    while (array.length < 18) {
+        var numSorteado = Math.floor(Math.random() * 18);
+        if (array.indexOf(numSorteado) == -1) {
+            array.push(numSorteado);
+        }
+    }
     cards.forEach((card) => {
-        let ramdom = Math.floor(Math.random() * 18);
-        card.style.order = ramdom;
+        card.style.order = array[i];
+        i++
     })
 })();
 
